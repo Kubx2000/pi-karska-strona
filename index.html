@@ -1,486 +1,111 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FC ZONE</title>
-
-<style>
-* {
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    background: #080c10;
-    color: white;
-    font-family: Arial, sans-serif;
-}
-
-.obramowka {
-    margin: 10px;
-    border: 3px solid #00ff88;
-    min-height: 95vh;
-    box-shadow: 0 0 15px #00ff8844;
-}
-
-header {
-    text-align: center;
-    padding: 25px;
-    border-bottom: 2px solid #00ff88;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 38px;
-}
-
-header span,
-.zielony {
-    color: #00ff88;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 20px;
-    background: #111820;
-    border-bottom: 2px solid #00ff88;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 12px 18px;
-    border: 1px solid #00ff88;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: 0.2s;
-}
-
-nav a:hover {
-    background: #00ff88;
-    color: #080c10;
-}
-
-.hero {
-    text-align: center;
-    padding: 70px 20px;
-    background: linear-gradient(135deg, #101c17, #080c10, #10251c);
-}
-
-.logo {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 25px;
-    border: 4px solid #00ff88;
-    border-radius: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 42px;
-    font-weight: 900;
-    color: #00ff88;
-    transform: rotate(-3deg);
-    box-shadow: 0 0 25px #00ff8844;
-}
-
-.hero h2 {
-    font-size: clamp(45px, 9vw, 80px);
-    margin: 10px 0;
-    letter-spacing: 5px;
-}
-
-.hero p {
-    color: #b9c7c0;
-}
-
-.linia {
-    width: 120px;
-    height: 4px;
-    background: #00ff88;
-    margin: 25px auto;
-    border-radius: 5px;
-}
-
-.pasek {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 25px;
-    background: #101820;
-    border-bottom: 1px solid #00ff88;
-    text-align: center;
-}
-
-.pasek strong {
-    display: block;
-    color: #00ff88;
-    font-size: 25px;
-    margin-bottom: 6px;
-}
-
-section {
-    padding: 35px 25px;
-    border-bottom: 1px solid #25352d;
-}
-
-section h2 {
-    border-left: 5px solid #00ff88;
-    padding-left: 12px;
-    margin-bottom: 25px;
-}
-
-.karty {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
-}
-
-.karta {
-    display: flex;
-    flex-direction: column;
-    background: #111820;
-    border: 1px solid #263b31;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: 0.2s;
-}
-
-.karta:hover {
-    border-color: #00ff88;
-    transform: translateY(-4px);
-}
-
-.karta img {
-    width: 100%;
-    height: 170px;
-    object-fit: cover;
-    background: #17251e;
-}
-
-.karta-tresc {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.karta h3 {
-    color: #00ff88;
-    line-height: 1.4;
-}
-
-.karta p {
-    color: #c3ccc7;
-    line-height: 1.6;
-}
-
-.etkieta {
-    color: #00ff88;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-.data {
-    color: #9ca3af;
-    font-size: 12px;
-    margin-top: auto;
-    padding-top: 10px;
-}
-
-.przycisk {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 11px 16px;
-    background: #00ff88;
-    color: #080c10;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    text-align: center;
-    align-self: flex-start;
-}
-
-.przycisk:hover {
-    background: white;
-}
-
-footer {
-    text-align: center;
-    padding: 25px;
-    color: #aaa;
-    background: #111820;
-}
-
-@media (max-width: 600px) {
-    .obramowka {
-        margin: 4px;
-        border-width: 2px;
-    }
-
-    header h1 {
-        font-size: 30px;
-    }
-
-    nav {
-        gap: 7px;
-        padding: 12px;
-    }
-
-    nav a {
-        padding: 10px;
-        font-size: 12px;
-    }
-
-    section {
-        padding: 25px 14px;
-    }
-
-    .hero {
-        padding: 55px 10px;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOUCHLINE | Piłka nożna & EA SPORTS FC</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
-
 <body>
-<div class="obramowka">
 
-<header>
-    <h1>FC <span>ZONE</span></h1>
+<header class="navbar">
+    <a href="#" class="logo">TOUCH<span>LINE</span></a>
+
+    <nav>
+        <a href="#home">Główna</a>
+        <a href="#news">Aktualności</a>
+        <a href="#clubs">Kluby</a>
+        <a href="#fc">EA SPORTS FC</a>
+    </nav>
 </header>
 
-<nav>
-    <a href="#">Strona główna</a>
-    <a href="#aktualnosci">Aktualności</a>
-    <a href="#pilka">Piłka nożna</a>
-    <a href="#fc">EA SPORTS FC</a>
-    <a href="#ut">Ultimate Team</a>
-</nav>
-
-<div class="hero">
-    <div class="logo">FC</div>
-    <h2>FC <span class="zielony">ZONE</span></h2>
-    <div class="linia"></div>
-    <p>PIŁKA NOŻNA • GAMING • EA SPORTS FC</p>
-</div>
-
-<div class="pasek">
-    <div><strong>⚽</strong>Piłka nożna</div>
-    <div><strong>🎮</strong>EA SPORTS FC</div>
-    <div><strong>🏆</strong>Wielkie ligi</div>
-    <div><strong>🔥</strong>Ultimate Team</div>
-</div>
-
-<section id="aktualnosci">
-    <h2>🔥 Prawdziwe aktualności</h2>
-
-    <div class="karty">
-
-        <article class="karta">
-            <img
-                src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=800&q=80"
-                alt="Stadion piłkarski"
-            >
-            <div class="karta-tresc">
-                <span class="etkieta">EA SPORTS FC</span>
-                <h3>EA SPORTS FC 27 już dostępne</h3>
-                <p>
-                    Najnowsza odsłona serii EA SPORTS FC ukazała się
-                    25 września 2026 roku. Gra wprowadza nowe sposoby
-                    rozgrywki i rozwija piłkarskie doświadczenie.
-                </p>
-                <span class="data">25 września 2026</span>
-                <a class="przycisk"
-                   href="https://www.ea.com/games/ea-sports-fc"
-                   target="_blank" rel="noopener noreferrer">
-                   Czytaj więcej
-                </a>
-            </div>
-        </article>
-
-        <article class="karta">
-            <img
-                src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80"
-                alt="Piłka na boisku"
-            >
-            <div class="karta-tresc">
-                <span class="etkieta">ULTIMATE TEAM</span>
-                <h3>Future Stars w Football Ultimate Team</h3>
-                <p>
-                    EA SPORTS opublikowało informacje o wydarzeniu
-                    Future Stars w Football Ultimate Team 27.
-                    Sprawdź szczegóły na oficjalnej stronie gry.
-                </p>
-                <span class="data">9 października 2026</span>
-                <a class="przycisk"
-                   href="https://www.ea.com/games/ea-sports-fc/news"
-                   target="_blank" rel="noopener noreferrer">
-                   Czytaj więcej
-                </a>
-            </div>
-        </article>
-
-        <article class="karta">
-            <img
-                src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=800&q=80"
-                alt="Mecz piłkarski"
-            >
-            <div class="karta-tresc">
-                <span class="etkieta">FC BARCELONA</span>
-                <h3>Barcelona przegrała z PSG</h3>
-                <p>
-                    FC Barcelona przegrała z Paris Saint-Germain
-                    2:4 w meczu Ligi Mistrzów rozegranym
-                    20 października 2026 roku.
-                </p>
-                <span class="data">20 października 2026</span>
-                <a class="przycisk"
-                   href="https://www.fcbarcelona.com/en/football/first-team/news"
-                   target="_blank" rel="noopener noreferrer">
-                   Czytaj więcej
-                </a>
-            </div>
-        </article>
-
-        <article class="karta">
-            <img
-                src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=800&q=80"
-                alt="Stadion i murawa"
-            >
-            <div class="karta-tresc">
-                <span class="etkieta">NOWOŚCI W GRZE</span>
-                <h3>Aktualizacja EA SPORTS FC 27</h3>
-                <p>
-                    Sprawdź oficjalne informacje o poprawkach,
-                    zmianach rozgrywki i kolejnych aktualizacjach
-                    przygotowanych przez twórców.
-                </p>
-                <span class="data">7 października 2026</span>
-                <a class="przycisk"
-                   href="https://www.ea.com/games/ea-sports-fc/news"
-                   target="_blank" rel="noopener noreferrer">
-                   Czytaj więcej
-                </a>
-            </div>
-        </article>
-
+<section class="hero" id="home">
+    <div class="hero-content">
+        <span class="tag">ŚWIAT PIŁKI NOŻNEJ</span>
+        <h1>PIŁKA NOŻNA.<br><span>NASZA PASJA.</span></h1>
+        <p>Aktualności, największe kluby i świat EA SPORTS FC w jednym miejscu</p>
+        <a href="#news" class="button">ODKRYJ WIĘCEJ ↗</a>
     </div>
 </section>
 
-<section id="pilka">
-    <h2>⚽ Świat piłki nożnej</h2>
+<section class="section" id="news">
+    <div class="section-heading">
+        <div>
+            <span class="tag">CO NOWEGO?</span>
+            <h2>Aktualności</h2>
+        </div>
+    </div>
 
-    <div class="karty">
-        <article class="karta">
-            <div class="karta-tresc">
-                <h3>Premier League</h3>
-                <p>Wiadomości z angielskiej piłki i informacje o klubach.</p>
-                <a class="przycisk"
-                   href="https://www.premierleague.com/"
-                   target="_blank" rel="noopener noreferrer">
-                   Oficjalna strona
-                </a>
+    <div class="news-grid">
+        <article class="news-card">
+            <div class="news-image football">⚽</div>
+            <div class="news-content">
+                <span class="category">PIŁKA NOŻNA</span>
+                <h3>Wszystko ze świata futbolu</h3>
+                <p>Najnowsze informacje o klubach, zawodnikach i rozgrywkach.</p>
             </div>
         </article>
 
-        <article class="karta">
-            <div class="karta-tresc">
-                <h3>La Liga</h3>
-                <p>Aktualności z hiszpańskiej ligi i najważniejsze wydarzenia.</p>
-                <a class="przycisk"
-                   href="https://www.laliga.com/"
-                   target="_blank" rel="noopener noreferrer">
-                   Oficjalna strona
-                </a>
+        <article class="news-card">
+            <div class="news-image champions">🏆</div>
+            <div class="news-content">
+                <span class="category">ROZGRYWKI</span>
+                <h3>Największe piłkarskie emocje</h3>
+                <p>Poznaj najważniejsze wydarzenia ze świata piłki nożnej.</p>
             </div>
         </article>
 
-        <article class="karta">
-            <div class="karta-tresc">
-                <h3>Ekstraklasa</h3>
-                <p>Polskie kluby i najnowsze informacje ligowe.</p>
-                <a class="przycisk"
-                   href="https://www.ekstraklasa.org/"
-                   target="_blank" rel="noopener noreferrer">
-                   Oficjalna strona
-                </a>
+        <article class="news-card">
+            <div class="news-image gaming">🎮</div>
+            <div class="news-content">
+                <span class="category">GAMING</span>
+                <h3>Świat EA SPORTS FC</h3>
+                <p>Informacje, ciekawostki i nowości dla fanów gry.</p>
             </div>
         </article>
     </div>
 </section>
 
-<section id="fc">
-    <h2>🎮 EA SPORTS FC</h2>
+<section class="section clubs-section" id="clubs">
+    <span class="tag">POZNAJ SWOJE ULUBIONE DRUŻYNY</span>
+    <h2>Świat wielkich klubów</h2>
+    <p class="section-description">
+        Największe drużyny, legendarni zawodnicy i historia futbolu
+    </p>
 
-    <div class="karty">
-        <article class="karta">
-            <div class="karta-tresc">
-                <h3>EA SPORTS FC 27</h3>
-                <p>Oficjalne wiadomości, aktualizacje i informacje o grze.</p>
-                <a class="przycisk"
-                   href="https://www.ea.com/games/ea-sports-fc/news"
-                   target="_blank" rel="noopener noreferrer">
-                   Zobacz aktualności
-                </a>
-            </div>
-        </article>
-
-        <article class="karta">
-            <div class="karta-tresc">
-                <h3>Tryb kariery</h3>
-                <p>Pomysły na transfery, talenty i wyzwania menedżerskie.</p>
-            </div>
-        </article>
+    <div class="club-grid">
+        <div class="club-card">🇪🇸 <h3>Real Madrid</h3></div>
+        <div class="club-card">🔵🔴 <h3>FC Barcelona</h3></div>
+        <div class="club-card">🔴 <h3>Manchester United</h3></div>
+        <div class="club-card">🔵 <h3>Manchester City</h3></div>
+        <div class="club-card">🔴⚫ <h3>AC Milan</h3></div>
+        <div class="club-card">⚫🟡 <h3>Borussia Dortmund</h3></div>
     </div>
 </section>
 
-<section id="ut">
-    <h2>🔥 Ultimate Team</h2>
+<section class="fc-section" id="fc">
+    <div class="fc-content">
+        <span class="tag">DLA FANÓW GAMINGU</span>
+        <h2>EA SPORTS <span>FC</span></h2>
+        <p>
+            Świat wirtualnego futbolu, najlepszych piłkarzy,
+            drużyn i emocjonującej rozgrywki
+        </p>
 
-    <div class="karty">
-        <article class="karta">
-            <div class="karta-tresc">
-                <h3>Najlepsze składy</h3>
-                <p>Pomysły na budowanie drużyny i dobór zawodników.</p>
-            </div>
-        </article>
-
-        <article class="karta">
-            <div class="karta-tresc">
-                <h3>Karty piłkarzy</h3>
-                <p>Sprawdzaj oficjalne wiadomości o nowych kartach i wydarzeniach.</p>
-                <a class="przycisk"
-                   href="https://www.ea.com/games/ea-sports-fc/news"
-                   target="_blank" rel="noopener noreferrer">
-                   Sprawdź nowości
-                </a>
-            </div>
-        </article>
-
-        <article class="karta">
-            <div class="karta-tresc">
-                <h3>SBC i wyzwania</h3>
-                <p>Informacje o wyzwaniach budowania składu i wydarzeniach.</p>
-            </div>
-        </article>
+        <div class="fc-features">
+            <div>🎮 <strong>Gaming</strong></div>
+            <div>⭐ <strong>Piłkarze</strong></div>
+            <div>🏆 <strong>Ultimate Team</strong></div>
+        </div>
     </div>
 </section>
 
 <footer>
-    <p><strong>FC ZONE</strong> © 2026</p>
-    <p>Twoje miejsce dla piłki nożnej i EA SPORTS FC</p>
-    <p>Strona fanowska, niepowiązana oficjalnie z EA SPORTS.</p>
+    <a href="#home" class="logo">TOUCH<span>LINE</span></a>
+    <p>Twoje miejsce w świecie futbolu ⚽</p>
+    <p class="copyright">© <span id="year"></span> TOUCHLINE</p>
 </footer>
 
-</div>
 </body>
 </html>
-
-
